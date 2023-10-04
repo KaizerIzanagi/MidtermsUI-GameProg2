@@ -260,9 +260,9 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1346473254}
   bulletPrefab: {fileID: 6472640093356085559, guid: 95a629b66b648a543b8c9de4219e1123,
     type: 3}
-  bulletSpeed: 100
-  bulletFireRate: 0
-  baseFireRate: 0
+  bulletSpeed: 10
+  bulletFireRate: 1
+  baseFireRate: 1
   colors: 0
 --- !u!4 &286788059 stripped
 Transform:

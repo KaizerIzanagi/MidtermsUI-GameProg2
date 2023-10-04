@@ -11,18 +11,13 @@ public class TowerScript : MonoBehaviour
     public Quaternion rotation, eularAngles, currentRotation;
     public Vector3 currentEulerAngles;
     public Transform TargetA;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ColorBullet colors;
+    public BulletScript bulletColor;
 
     // Update is called once per frame
     void Update()
     {
-        LookRotation();
+        EnemyDetection();
     }
 
     public void OnDrawGizmosSelected()
@@ -37,6 +32,7 @@ public class TowerScript : MonoBehaviour
         if (dist <= rangeValue)
         {
            Debug.Log("Amogus Detected");
+           LookRotation();
         }
     }
 
@@ -45,6 +41,13 @@ public class TowerScript : MonoBehaviour
         Vector3 relativepos = TargetA.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativepos, Vector3.up);
         transform.rotation = rotation;
-        
+    }
+
+    void OnMouseDown()
+    {
+        switch (colors)
+        {
+ 
+        }
     }
 }

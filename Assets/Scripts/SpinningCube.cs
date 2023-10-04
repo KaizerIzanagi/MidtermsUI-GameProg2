@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+
 
 public class SpinningCube : MonoBehaviour
 {
@@ -8,10 +11,36 @@ public class SpinningCube : MonoBehaviour
     //Acts as Settable Vectors
     public Quaternion rotation, eularAngles, currentRotation;
     public Vector3 currentEulerAngles;
+    public ColorBullet colors;
+    public GameObject redCube, blackCube, yellowCube;
+
+    private void Start()
+    {
+        colors = ColorBullet.red;
+    }
 
     void Update()
     {
         Rotation();
+
+        switch (colors)
+        {
+            case ColorBullet.red:
+                redCube.SetActive(true);
+                blackCube.SetActive(false);
+                yellowCube.SetActive(false);
+                break; 
+            case ColorBullet.black:
+                redCube.SetActive(false);
+                blackCube.SetActive(true);
+                yellowCube.SetActive(false);
+                break; 
+            case ColorBullet.yellow:
+                redCube.SetActive(false);
+                blackCube.SetActive(false);
+                yellowCube.SetActive(true);
+                break;
+        }
     }
 
     public void Rotation()
@@ -26,6 +55,7 @@ public class SpinningCube : MonoBehaviour
         currentRotation.eulerAngles = currentEulerAngles;
         //Rotates the game Game Object based on the Quaternion.Angle
         transform.rotation = currentRotation;
-    }
+    } 
+
 
 }

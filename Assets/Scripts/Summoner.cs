@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum SusColor
+{
+    red,
+    black,
+    yellow
+}
 public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject enemy;
     public float interval, baseInterval;
+    public GameObject redSus, blackSus, yellowSus;
+    public SusColor suspColor;
+    public TowerScript towerBullet;
 
     void Start()
     {

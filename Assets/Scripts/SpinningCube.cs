@@ -22,25 +22,6 @@ public class SpinningCube : MonoBehaviour
     void Update()
     {
         Rotation();
-
-        switch (colors)
-        {
-            case ColorBullet.red:
-                redCube.SetActive(true);
-                blackCube.SetActive(false);
-                yellowCube.SetActive(false);
-                break; 
-            case ColorBullet.black:
-                redCube.SetActive(false);
-                blackCube.SetActive(true);
-                yellowCube.SetActive(false);
-                break; 
-            case ColorBullet.yellow:
-                redCube.SetActive(false);
-                blackCube.SetActive(false);
-                yellowCube.SetActive(true);
-                break;
-        }
     }
 
     public void Rotation()

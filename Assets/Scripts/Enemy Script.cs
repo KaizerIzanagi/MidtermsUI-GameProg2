@@ -6,10 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyScript : MonoBehaviour
 {
     public float speed;
+    public bool isRed, isBlack, isYellow;
+    public TowerScript homing;
 
     private void Start()
     {
-        speed = Random.Range(1,3);
+        speed = Random.Range(0.5f, 2);
     }
 
     // Update is called once per frame
@@ -30,5 +32,57 @@ public class EnemyScript : MonoBehaviour
         Vector3 relativepos = GameController.Instance.player.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativepos, Vector3.up);
         transform.rotation = rotation;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isRed)
+        {
+            if(other.CompareTag("RedBullet"))
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                LookRotation();
+            }
+            else
+            {
+                if (other.CompareTag("Player"))
+                {
+                    GameOverManager.Instance.ImpostorWin();
+                }
+            }
+        }
+        if (isBlack)
+        {
+            if (other.CompareTag("BlackBullet"))
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                LookRotation();
+            }
+            else
+            {
+                if (other.CompareTag("Player"))
+                {
+                    GameOverManager.Instance.ImpostorWin();
+                }
+            }
+        }
+        if (isYellow)
+        {
+            if (other.CompareTag("YellowBullet"))
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                LookRotation();
+            }
+            else
+            {
+                if (other.CompareTag("Player"))
+                {
+                    GameOverManager.Instance.ImpostorWin();
+                }
+            }
+        }
     }
 }

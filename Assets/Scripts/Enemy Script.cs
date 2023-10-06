@@ -42,14 +42,7 @@ public class EnemyScript : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
-                LookRotation();
-            }
-            else
-            {
-                if (other.CompareTag("Player"))
-                {
-                    GameOverManager.Instance.ImpostorWin();
-                }
+                homing.EnemyDetection();
             }
         }
         if (isBlack)
@@ -58,14 +51,7 @@ public class EnemyScript : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
-                LookRotation();
-            }
-            else
-            {
-                if (other.CompareTag("Player"))
-                {
-                    GameOverManager.Instance.ImpostorWin();
-                }
+                homing.EnemyDetection();
             }
         }
         if (isYellow)
@@ -74,14 +60,7 @@ public class EnemyScript : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
-                LookRotation();
-            }
-            else
-            {
-                if (other.CompareTag("Player"))
-                {
-                    GameOverManager.Instance.ImpostorWin();
-                }
+                homing.EnemyDetection();
             }
         }
     }

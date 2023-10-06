@@ -58,7 +58,7 @@ public class TowerScript : MonoBehaviour
     {
         sus = GameObject.FindGameObjectsWithTag("Sus");
         TargetA = sus[0];
-        float dist = Vector3.Distance(TargetA.transform.position, transform.position);
+        float dist = Vector3.Distance(transform.position, TargetA.transform.position);
         if (dist <= rangeValue)
         {
             Debug.Log("Amogus Detected");

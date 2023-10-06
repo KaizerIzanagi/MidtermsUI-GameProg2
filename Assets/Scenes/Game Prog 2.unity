@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 195679506}
   - component: {fileID: 195679508}
   - component: {fileID: 195679509}
+  - component: {fileID: 195679510}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Player
@@ -239,7 +240,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2.5, y: 3.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &195679509
 MonoBehaviour:
@@ -265,6 +266,19 @@ MonoBehaviour:
   baseFireRate: 1
   colors: 0
   towerColor: {fileID: 195679506}
+--- !u!114 &195679510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195679505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98d195701f51ed4a9d5eb5df314e58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOver: {fileID: 851679509}
 --- !u!1 &215221511
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,52 +383,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1791478764}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &241954464
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 241954466}
-  - component: {fileID: 241954465}
-  m_Layer: 0
-  m_Name: Game Over Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &241954465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241954464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98d195701f51ed4a9d5eb5df314e58d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOver: {fileID: 851679509}
-  MainGame: {fileID: 1909169721}
---- !u!4 &241954466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241954464}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.67846, y: 86.44138, z: 329.3121}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293607663
 GameObject:
@@ -1512,7 +1480,7 @@ RectTransform:
   m_Children:
   - {fileID: 534668798}
   - {fileID: 405155406}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1909169722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2274,7 +2242,7 @@ MonoBehaviour:
     type: 3}
   yellowSus: {fileID: 5320871983694428103, guid: 2dd938eb54f787944a8ed52480502e91,
     type: 3}
-  suspColor: 0
+  suspColor: 2
   towerBullet: {fileID: 0}
 --- !u!4 &1216259541
 Transform:
@@ -3211,7 +3179,7 @@ MonoBehaviour:
     type: 3}
   yellowSus: {fileID: 5320871983694428103, guid: 2dd938eb54f787944a8ed52480502e91,
     type: 3}
-  suspColor: 0
+  suspColor: 1
   towerBullet: {fileID: 0}
 --- !u!4 &1445029812
 Transform:
@@ -3676,6 +3644,7 @@ Transform:
   - {fileID: 195679507}
   - {fileID: 1346363370}
   - {fileID: 1310504288}
+  - {fileID: 851679513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079145875
@@ -3944,6 +3913,4 @@ SceneRoots:
   - {fileID: 1684005283}
   - {fileID: 2079145877}
   - {fileID: 1909169722}
-  - {fileID: 851679513}
   - {fileID: 293607666}
-  - {fileID: 241954466}

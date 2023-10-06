@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameOverManager : MonoBehaviour
 {
     public static GameOverManager Instance { get; set; }
-    public GameObject GameOver, MainGame;
+    public GameObject GameOver;
 
 
     // Start is called before the first frame update
@@ -14,8 +14,13 @@ public class GameOverManager : MonoBehaviour
         GameOver.SetActive(false);
     }
 
-    public void ImpostorWin()
+    public void OnTriggerEnter(Collider other)
     {
-        GameOver.SetActive(true);
+        if (other.CompareTag("Sus"))
+        {
+            GameOver.SetActive(true);
+        }
+        
     }
+
 }
